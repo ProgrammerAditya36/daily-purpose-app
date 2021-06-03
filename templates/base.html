@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.83.1">
+  <title>Daily Purpose App</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<script>
+
+
+
+</script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+    nav{
+      background-color: white !important;
+    }
+    .container{
+      margin-top: 1rem;
+    }
+    .card, .page{
+      min-height: 30rem;
+      border:1px solid black !important;
+      box-shadow: 1px 10px 30px black;
+      margin-bottom: 5rem;
+    }
+    form{
+      padding: 20px 30px;
+      border:1px solid black !important;
+      box-shadow: 1px 10px 30px black;
+      margin-bottom: 5rem;
+      border-radius: 10px;
+    }
+    table, .table{
+      border:1px solid black !important;
+      box-shadow: 1px 10px 30px black;
+      margin-bottom: 5rem;
+      border-radius: 10px;
+    }
+    .border{
+      border:1px solid black !important; 
+      box-shadow: 1px 10px 30px black !important;
+      box-sizing: border-box;
+
+    }
+    .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    /* stylelint-disable selector-list-comma-newline-after */
+
+    .blog-header {
+      line-height: 1;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .p-2 {
+      text-decoration: none;
+    }
+
+    .p-2:hover {
+      border-bottom: 1px solid orange;
+    }
+
+ .icon-img{
+      vertical-align: middle;
+      height: 15rem;
+      margin: 7px 5px;
+    }
+.logo-img {
+    vertical-align: middle;
+    /* width: 200px; */
+    margin: 20px auto;
+    box-sizing: border-box;
+    height: 10rem;
+}
+
+
+    .icon-img:hover {
+      opacity: 0.6;
+    }
+
+    .blog-header-logo {
+      text-align: center;
+      font-family: "Staatliches", Georgia, "Times New Roman", serif
+        /*rtl:Amiri, Georgia, "Times New Roman", serif*/
+      ;
+      font-size: 3rem;
+      text-decoration: none;
+    }
+
+    .blog-header-logo:hover {
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Quicksand", Georgia, "Times New Roman", serif
+        /*rtl:Amiri, Georgia, "Times New Roman", serif*/
+      ;
+    }
+    h3{
+      border-bottom: 1px solid rgb(42, 39, 39);
+   
+    }
+    .display-4 {
+      font-size: 2.5rem;
+    }
+    .card-text{
+      margin-top: auto;
+    }
+
+    @media (min-width: 768px) {
+      .display-4 {
+        font-size: 3rem;
+      }
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-scroller .nav-link {
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      font-size: .875rem;
+    }
+
+    .card-img-right {
+      height: 100%;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .flex-auto {
+      flex: 0 0 auto;
+    }
+
+    .bg-img {
+      background: url('https://www.innovasolutions.com/wp-content/uploads/2020/06/bokeh-cover-bg.jpg');
+
+    }
+
+    .h-250 {
+      height: 250px;
+    }
+
+    @media (min-width: 768px) {
+      .h-md-250 {
+        height: 250px;
+      }
+      .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(0,0,0,.9);
+    font-size: 0.9rem;
+}
+.nav-link:hover {
+    border-bottom: 1px solid orange;
+}
+    }
+
+    /* Pagination */
+    .blog-pagination {
+      margin-bottom: 4rem;
+    }
+
+    .blog-pagination>.btn {
+      border-radius: 2rem;
+    }
+
+    /*
+ * Blog posts
+ */
+    .blog-post {
+      margin-bottom: 4rem;
+    }
+    .btn-group-lg>.btn, .btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: .3rem;
+    width: 100%;
+}
+th {
+    width: 25%;
+}
+
+    .blog-post-title {
+      margin-bottom: .25rem;
+      font-size: 2.5rem;
+    }
+
+    .blog-post-meta {
+      margin-bottom: 1.25rem;
+      color: #727272;
+    }
+
+    /*
+ * Footer
+ */
+    .blog-footer {
+      padding: 2.5rem 0;
+      color: #727272;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-top: .05rem solid #e5e5e5;
+    }
+
+    .blog-footer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .no-link {
+      text-decoration: none;
+      color: #000;
+    }
+    .form-label {
+    margin-bottom: .5rem;
+}
+    textarea {
+    resize: vertical;
+    width: 100%;
+}
+.page{
+  border:1px solid black;
+  padding:20px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+.diary-title{
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-family: 'Staatliches', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.diary-date{
+  font-size: 1.5rem;
+}
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navbar-collapse{
+  flex-grow: 0;
+}
+.content{
+  text-align: justify;
+}
+.d-none {
+    display: block !important;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    text-align: center;
+}
+@media(max-width:1014px){
+  .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+}
+@media (min-width: 768px) and (max-width:1016px){
+.h-md-250 {
+    height: 400px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;}}
+
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+</head>
+<body>
+
+  <div class="container">
+    <header class="blog-header py-3">
+      <div class="row">
+
+        <div class="col-12 text-center">
+          <a class="blog-header-logo text-dark" href="/">Daily Purpose App</a>
+        </div>
+
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">APPS</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/shopping.html">Shopping</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/banking.html">e-Banking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/entertainment.html">Entertainment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/news.html">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/microsoft.html">Microsoft Apps</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/google.html">Google Apps</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/social.html">Social</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/todolist.html">To-Do List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/payment.html">Payments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/diary.html">Diary</a>
+              </li>
+
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </div>
+  </div>
+
+  {% block body %}
+      
+  {% endblock body %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

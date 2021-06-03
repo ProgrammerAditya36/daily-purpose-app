@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="container">
+    <h2>Update Todo</h2>
+    <form action="/update/{{todo.sno}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">TODO Title</label>
+            <input type="text" class="form-control" id="title" aria-describedby="desc" name="title"
+                value='{{todo.title}}'>
+            <div id="desc" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Todo Description</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="desc" value='{{todo.desc}}'>
+        </div>
+
+        <button type="submit" class="btn btn-outline-warning btn-lg">Update</button>
+    </form>
+</div>
+<div class="container my-3">
+
+</div>
+
+
+
+{% endblock body %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <h1 style="text-align: center;margin-bottom: 3rem;">NEWS</h1>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    
+    {% for new, des, i, url in context %}
+    
+    <a href="{{url}}" target="_blank" class="col no-link">
+        <div class="card">
+            {% if i != None %}
+            <img class="logo-img" src="{{i}}" class="card-img-top" alt="...">
+            {% else %}
+            <img class="logo-img" src="https://shmector.com/_ph/18/412122157.png" class="card-img-top" alt="...">    
+            {% endif %}
+          
+          <div class="card-body">
+            <h4 class="card-title">{{new}}</h4>
+            <p class="card-text">{{des}}</p>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+</div>
+</div>
+
+{% endblock body %}

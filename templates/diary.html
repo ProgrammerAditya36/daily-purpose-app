@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}  
+
+  
+  <div class="container">
+    <h1 style="text-align: center;margin-bottom: 3rem; text-transform: uppercase;">Diary</h1>
+    <form action="/diary" method="POST" class="container">
+      <div class="mb-3">
+        <label for="title" class="form-label">Diary Title</label>
+        <input type="text" class="form-control" id="title" aria-describedby="desc" name="_title">
+        <div id="desc" class="form-text"></div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Todo Description</label>
+        <textarea name="des" id="exampleInputPassword1" cols="30" rows="10"></textarea>
+        <!-- <input type="text" class="form-control" id="exampleInputPassword1" name="des"> -->
+      </div>
+
+      <button type="submit" class="btn btn-outline-success btn-lg">Submit</button>
+    </form>
+  </div>
+  <div class="container my-3">
+    
+        {% if allDiary|length == 0 %}
+        <div class="alert alert-dark" role="alert">
+          No record Found .... Please add your First Diary Page Now
+        </div>
+        {% endif %}
+          
+       
+        {% for todo in allDiary %}
+        <div class="page container">
+            <p class="diary-title">{{todo._title}}</p>
+            <p class="diary-date">{{todo.date_created}}</p>
+            <p class="content">{{todo.des}}</p>
+        </div>
+            
+        {% endfor %}
+       
+
+
+  
+    {% endblock body %}
+
+
+          <!-- <td>{{todo._title}}</td> -->
+          <!-- <td>{{todo.des}}</td> -->
+            <!-- {{todo.date_created}} -->
